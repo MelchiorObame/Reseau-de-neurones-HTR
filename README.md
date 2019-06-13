@@ -13,7 +13,7 @@ A big thank-you to **Mr. Michel HASSENFORDER** (Teacher at ENSISA Mulhouse Franc
 * Melchior OBAME OBAME 
 * Saad BENDAOUD
 
-**Note: ** In the entire project, `user_name` refers to the real name of a user.
+**Note:** In the entire project, `user_name` refers to the real name of a user.
 
 ## Run demo
 
@@ -38,6 +38,7 @@ tested with:
 * TF 1.3, 1.10 and 1.12 (**requirements.txt**)
 * Ubuntu 16.04 ,17.04   and Windows 7,10
 
+## Arguments for main.py : operations(train, validation, infer...)
 * `--train`: train the NN, details see below.
 * `--validate`: validate the NN, details see below.
 * `--beamsearch`: use vanilla beam search decoding (better, but slower) instead of best path decoding.
@@ -68,12 +69,12 @@ If neither `--train` nor `--validate` is specified, the NN infers the text from 
 Two examples: if you want to infer using beam search, execute `python main.py --beamsearch`, while you have to execute `python main.py --train --beamsearch` if you want to train the NN and do the validation using beam search.
 
 
-## Integrate word beam search decoding (Only on a Linux environment)
+## Integrate word beam search decoding (Only on a Linux environment)##
 Besides the two decoders shipped with TF, it is possible to use word beam search decoding \[4\].
 Using this decoder, words are constrained to those contained in a **dictionary**, but arbitrary non-word character strings (numbers, punctuation marks) can still be recognized.
 The following illustration shows a sample for which word beam search is able to recognize the correct text, while the other decoders fail.
 
-! [decoder_comparison](./doc/decoder_comparison.png)
+![decoder_comparison](./doc/decoder_comparison.png)
 
 Instruction to follow to add word beam search:
 
